@@ -12,11 +12,11 @@ int main()
     std::cout << "4 ячейка до:" << vector.at(3) << std::endl;
     vector.at(3) = 4;
     std::cout << "4 ячейка после:" << vector.at(3) << std::endl;
-    std::cout << "Запасное место после создания: " << vector.capacity() << std::endl;
+    std::cout << "Capacity после создания: " << vector.capacity() << std::endl;
     vector.push_back(6);
     std::cout << "6 ячейка:" << vector.at(5) << std::endl;
-    std::cout << "Запасное место после добавления элемента: " << vector.capacity() << std::endl;
+    std::cout << "Capacity после добавления элемента: " << vector.capacity() << std::endl;
     vector.push_back(7);
     std::cout << "7 ячейка:" << vector.at(6) << std::endl;
-    std::cout << "Запасное место после добавления элемента: " << vector.capacity() << std::endl;
+    std::cout << "Capacity после добавления элемента: " << vector.capacity() << std::endl;
 }

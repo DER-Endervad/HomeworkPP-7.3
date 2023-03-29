@@ -19,20 +19,28 @@ public:
 	}
 
 	S_vector& operator=(const S_vector& copy) {
-		this->arr = copy.arr;
+		this->arr = new T[copy.s_size];
+		for (int i = 0; i < copy.s_size; ++i) {
+			this->arr[i] = copy.arr[i];
+		}
 		delete copy.arr;
 		this->s_size = copy.s_size;
 		this->s_full = copy.s_full;
 	}
 
 	S_vector(const S_vector& copy) {
-		this->arr = copy.arr;
+		this->arr = new T[copy.s_size];
+		for (int i = 0; i < copy.s_size; ++i) {
+			this->arr[i] = copy.arr[i];
+		}
 		this->s_size = copy.s_size;
 		this->s_full = copy.s_full;
 	}
 
 	T& at(const int& number) {
-		return arr[number];
+		if (number < s_size) {
+			return arr[number];
+		}
 	}
 
 	void push_back(T value) {
@@ -55,7 +63,7 @@ public:
 	}
 
 	int capacity() {
-		return s_full - s_size;
+		return s_full;
 	}
 };
 
