@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 template<class T>
 class S_vector
 {
@@ -38,8 +39,17 @@ public:
 	}
 
 	T& at(const int& number) {
-		if (number < s_size) {
-			return arr[number];
+		try {
+			if (number < s_size) {
+				return arr[number];
+			}
+			else {
+				throw std::exception("The number is out of range. First item shown: ");
+			}
+		}
+		catch (const std::exception& except) {
+			std::cerr << except.what();
+			return arr[0];
 		}
 	}
 

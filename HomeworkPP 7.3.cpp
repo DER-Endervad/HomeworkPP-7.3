@@ -19,4 +19,5 @@ int main()
     vector.push_back(7);
     std::cout << "7 ячейка:" << vector.at(6) << std::endl;
     std::cout << "Capacity после добавления элемента: " << vector.capacity() << std::endl;
+    std::cout << "20 ячейка:" << vector.at(19) << std::endl;
 }
