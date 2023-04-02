@@ -39,17 +39,11 @@ public:
 	}
 
 	T& at(const int& number) {
-		try {
-			if (number < s_size) {
-				return arr[number];
-			}
-			else {
-				throw std::exception("The number is out of range. First item shown: ");
-			}
+		if (number < s_size) {
+			return arr[number];
 		}
-		catch (const std::exception& except) {
-			std::cerr << except.what();
-			return arr[0];
+		else {
+			throw std::exception("The number is out of range. First item shown: ");
 		}
 	}
 
